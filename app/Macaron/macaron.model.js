@@ -56,8 +56,7 @@ Macaron.create = (data, result) => {
     });
 };
 
-Macaron.update = (data, result) => {
-    const macaron_id = data?.macaron_id;
+Macaron.update = (id, data, result) => {
     const values = {
         macaron_name: data?.macaron_name || null,
         macaron_size: data?.macaron_size || null,
@@ -70,7 +69,7 @@ Macaron.update = (data, result) => {
         .map(([key, value]) => `${key} = '${value}'`)
         .join(', ');
 
-    const sqlQuery = "UPDATE MACARONS SET " + setClause + " WHERE macaron_id = " + macaron_id;
+    const sqlQuery = "UPDATE MACARONS SET " + setClause + " WHERE macaron_id = " + id;
     console.log(sqlQuery);
     database.query(sqlQuery, (err, macaron) => {
         if (err) {

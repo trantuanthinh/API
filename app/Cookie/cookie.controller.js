@@ -15,9 +15,10 @@ exports.add_cookie = (req, res) => {
     });
 };
 
-exports.update_cookie = (req, res) => {
+exports.update_cookie_by_id = (req, res) => {
     var data = req.body;
-    Cookie.update(data, (response) => {
+    var id = req.params.id;
+    Cookie.update(id, data, (response) => {
         res.send({ result: response });
     });
 };

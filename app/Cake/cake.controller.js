@@ -15,9 +15,10 @@ exports.add_cake = (req, res) => {
     });
 };
 
-exports.update_cake = (req, res) => {
+exports.update_cake_by_id = (req, res) => {
     var data = req.body;
-    Cake.update(data, (response) => {
+    var id = req.params.id;
+    Cake.update(id, data, (response) => {
         res.send({ result: response });
     });
 };

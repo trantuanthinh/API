@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 //Routers
 require("./app/Home/home.router")(app);
-app.use(authMiddleWare.isAuth);
+// app.use(authMiddleWare.isAuth);
 //Each routers below is checked by MiddleWare with authToken
 require("./app/Cookie/cookie.router")(app);
 require("./app/Cake/cake.router")(app);

@@ -56,8 +56,7 @@ Cake.create = (data, result) => {
     });
 };
 
-Cake.update = (data, result) => {
-    const cake_id = data?.cake_id;
+Cake.update = (id, data, result) => {
     const values = {
         cake_name: data?.cake_name || null,
         cake_size: data?.cake_size || null,
@@ -70,7 +69,7 @@ Cake.update = (data, result) => {
         .map(([key, value]) => `${key} = '${value}'`)
         .join(', ');
 
-    const sqlQuery = "UPDATE CAKES SET " + setClause + " WHERE cake_id = " + cake_id;
+    const sqlQuery = "UPDATE CAKES SET " + setClause + " WHERE cake_id = " + id;
     console.log(sqlQuery);
     database.query(sqlQuery, (err, cake) => {
         if (err) {

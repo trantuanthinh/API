@@ -56,8 +56,7 @@ Cookie.create = (data, result) => {
     });
 };
 
-Cookie.update = (data, result) => {
-    const cookie_id = data?.cookie_id;
+Cookie.update = (id, data, result) => {
     const values = {
         cookie_name: data?.cookie_name || null,
         cookie_size: data?.cookie_size || null,
@@ -70,7 +69,7 @@ Cookie.update = (data, result) => {
         .map(([key, value]) => `${key} = '${value}'`)
         .join(', ');
 
-    const sqlQuery = "UPDATE COOKIES SET " + setClause + " WHERE cookie_id = " + cookie_id;
+    const sqlQuery = "UPDATE COOKIES SET " + setClause + " WHERE cookie_id = " + id;
     console.log(sqlQuery);
     database.query(sqlQuery, (err, cookie) => {
         if (err) {

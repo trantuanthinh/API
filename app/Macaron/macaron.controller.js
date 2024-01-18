@@ -15,9 +15,10 @@ exports.add_macaron = (req, res) => {
     });
 };
 
-exports.update_macaron = (req, res) => {
+exports.update_macaron_by_id = (req, res) => {
     var data = req.body;
-    Macaron.update(data, (response) => {
+    var id = req.params.id;
+    Macaron.update(id, data, (response) => {
         res.send({ result: response });
     });
 };

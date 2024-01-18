@@ -6,8 +6,7 @@ module.exports = (router) => {
 
     router.post("/cake/add", cakeController.add_cake);
 
-    // router.put("/cake/update/:id", cakeController.update_cake_by_id);
-    router.put("/cake/update", cakeController.update_cake);
+    router.put("/cake/update/:id", cakeController.update_cake_by_id);
 
     router.delete("/cake/delete/:id", cakeController.delete_cake_by_id);
 };

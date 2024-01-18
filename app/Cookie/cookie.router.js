@@ -6,8 +6,7 @@ module.exports = (router) => {
 
     router.post("/cookie/add", cookieController.add_cookie);
 
-    // router.put("/cookie/update/:id", cookieController.update_cookie_by_id);
-    router.put("/cookie/update", cookieController.update_cookie);
+    router.put("/cookie/update/:id", cookieController.update_cookie_by_id);
 
     router.delete("/cookie/delete/:id", cookieController.delete_cookie_by_id);
 };
