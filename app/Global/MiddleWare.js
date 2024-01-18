@@ -1,5 +1,6 @@
 let isAuth = async (req, res, next) => {
     var _JWT = require("../Global/JWT")
+    console.log(req);
     var _token = req.headers.authorization;
     if (_token) {
         try {

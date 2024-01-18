@@ -10,9 +10,10 @@ app.use(bodyParser.json());
 
 //Routers
 require("./app/Home/home.router")(app);
-app.use(authMiddleWare.isAuth); //Each routers below is checked with authToken
-require("./app/Cake/cake.router")(app);
+app.use(authMiddleWare.isAuth);
+//Each routers below is checked by MiddleWare with authToken
 require("./app/Cookie/cookie.router")(app);
+require("./app/Cake/cake.router")(app);
 require("./app/Macaron/macaron.router")(app);
 
-app.listen(PORT, () => console.log(`live on: http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Live on: http://localhost:${PORT}`));
