@@ -1,0 +1,36 @@
+CREATE DATABASE IF NOT EXISTS 3t;
+
+USE 3t;
+
+CREATE TABLE cakes (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL,
+  `size` DOUBLE NULL,
+  `flavor` VARCHAR(255) NULL,
+  `price` DOUBLE NOT NULL,
+  `image_url` VARCHAR(255) NULL,
+  PRIMARY KEY (`id`),
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE macarons (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL,
+  `size` DOUBLE NULL,
+  `flavor` VARCHAR(255) NULL,
+  `price` DOUBLE NOT NULL,
+  `image_url` VARCHAR(255) NULL,
+  PRIMARY KEY (`id`),
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE cookies (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL,
+  `size` DOUBLE NULL,
+  `flavor` VARCHAR(255) NULL,
+  `price` DOUBLE NOT NULL,
+  `image_url` VARCHAR(255) NULL,
+  PRIMARY KEY (`id`),
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
